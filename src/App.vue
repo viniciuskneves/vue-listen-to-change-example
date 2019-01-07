@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <simple />
+    <vuex1 />
+    <vuex2 />
+    <vuex3 />
+    <vuex4 />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Simple from '@/components/Simple.vue';
+import Vuex1 from '@/components/Vuex1.vue';
+import Vuex2 from '@/components/Vuex2.vue';
+import Vuex3 from '@/components/Vuex3.vue';
+import Vuex4 from '@/components/Vuex4.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    Simple,
+    Vuex1,
+    Vuex2,
+    Vuex3,
+    Vuex4,
+  },
+  mounted() {
+    this.$store.dispatch('fetchApi');
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
