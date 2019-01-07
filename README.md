@@ -1,4 +1,4 @@
-# vue-listen-to-change-example
+# [Link to Post](https://dev.to/viniciuskneves/watch-for-vuex-state-changes-2mgj)
 
 ## Project setup
 ```
