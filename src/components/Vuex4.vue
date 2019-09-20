@@ -17,19 +17,15 @@ export default {
   computed: mapState(['status']),
   mounted() {
     this.$store.subscribe((mutation, state) => {
-      switch (mutation.type) {
-        case 'updateStatus':
-          const status = state.status;
+      if (mutation.type === 'updateStatus') {
+        console.log(`Updating to ${state.status}`);
 
-          console.log(`Updating to ${status}`);
-
-          // Do whatever makes sense now
-          if (status === 'success') {
-            this.complex = {
-              deep: 'some deep object',
-            };
-          }
-          break;
+        // Do whatever makes sense now
+        if (state.status === 'success') {
+          this.complex = {
+            deep: 'some deep object',
+          };
+        }
       }
     });
   },

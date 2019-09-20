@@ -14,13 +14,13 @@ export default {
       status: 'pending',
     };
   },
-  mounted() {
-    console.log(`MOUNTED called, status: ${this.status}`);
+  created() {
+    console.log(`CREATED called, status: ${this.status}`);
 
-    this.handleMounted();
+    this.handleCreated();
   },
   methods: {
-    async handleMounted() {
+    async handleCreated() {
       try {
         await api.get();
 

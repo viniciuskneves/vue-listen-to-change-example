@@ -24,7 +24,7 @@ export default {
     Vuex3,
     Vuex4,
   },
-  mounted() {
+  created() {
     this.$store.dispatch('fetchApi');
   },
 };
