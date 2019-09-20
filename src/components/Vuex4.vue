@@ -15,7 +15,7 @@ export default {
     };
   },
   computed: mapState(['status']),
-  mounted() {
+  created() {
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === 'updateStatus') {
         console.log(`Updating to ${state.status}`);

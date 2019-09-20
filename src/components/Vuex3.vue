@@ -15,7 +15,7 @@ export default {
     };
   },
   computed: mapState(['status']),
-  mounted() {
+  created() {
     this.$store.watch(
       (state, getters) => getters.status,
       (newValue, oldValue) => {
