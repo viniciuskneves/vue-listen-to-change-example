@@ -16,7 +16,7 @@ export default {
   },
   computed: mapState(['status']),
   created() {
-    this.$store.watch(
+    this.unwatch = this.$store.watch(
       (state, getters) => getters.status,
       (newValue, oldValue) => {
         console.log(`Updating from ${oldValue} to ${newValue}`);
@@ -29,6 +29,9 @@ export default {
         }
       },
     );
+  },
+  beforeDestroy() {
+    this.unwatch();
   },
 };
 </script>

@@ -16,7 +16,7 @@ export default {
   },
   computed: mapState(['status']),
   created() {
-    this.$store.subscribe((mutation, state) => {
+    this.unsubscribe = this.$store.subscribe((mutation, state) => {
       if (mutation.type === 'updateStatus') {
         console.log(`Updating to ${state.status}`);
 
@@ -28,6 +28,9 @@ export default {
         }
       }
     });
+  },
+  beforeDestroy() {
+    this.unsubscribe();
   },
 };
 </script>
